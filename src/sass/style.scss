@@ -1,0 +1,313 @@
+// colors
+// Primary:
+$Moderate_blue: hsl(238, 40%, 52%); //upvotes
+$Soft_red: hsl(358, 79%, 66%); //delete
+$Light_grayish_blue: hsl(239, 58%, 85%); //active reply button color
+$Pale_red: hsl(357, 100%, 86%); //active delete button color
+
+//Neutral:
+$Dark_blue: hsl(212, 24%, 26%); //cancel delete process color
+$Grayish_Blue: hsl(211, 10%, 45%); //text color
+$Light_gray: hsl(223, 20%, 93%); //what the hell is this. 404 not found
+$Very_light_gray: hsl(228, 33%, 97%); //body background color
+$White: hsl(0, 0%, 100%); //comment background color
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+  background-color: $Very_light_gray;
+  margin: 0;
+  padding: 60px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  image {
+    display: block;
+  }
+
+  main {
+    width: 70%;
+    max-width: 720px;
+    display: flex;
+    flex-direction: column;
+    
+    #background {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100vw;
+      height: 100%;
+      background-color: #000;
+      opacity: 0.2;
+      display: none;
+    }
+
+    #delete_container {
+      //width and height
+      width: 400px;
+      height: 250px; 
+      //centering
+      position: absolute;
+      top: 50%;
+      left: 50%; 
+      transform: translate(-50%, -50%);
+      //flex
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      //background
+      background-color: $White;
+      border: 2px solid lime;
+      border-radius: 10px; 
+      padding: 30px;
+
+      h2 {
+        margin: 0;
+        font-size: 19px;
+        color: $Dark_blue
+      }
+
+      p {
+        margin: 0;
+        color: $Grayish_Blue;
+        line-height: 1.5;
+      }
+
+      .choice {
+        display: flex;
+        justify-content: space-between;
+
+        #cancel_btn {
+          width: 150px; 
+          height: 50px; 
+          background-color: hsl(211, 10%, 45%);
+          border-radius: 10px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .cancel_span {
+            text-transform: capitalize;
+            color: $White;
+            font-weight: 900;
+          }
+        }
+
+        #do_delete_btn {
+          width: 150px; 
+          height: 50px; 
+          background-color: hsl(358, 79%, 66%); 
+          border-radius: 10px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .cancel_cancel_span {
+            text-transform: capitalize;
+            color: $White;
+            font-weight: 500;
+          }          
+        }
+      }
+    }
+
+    .comment {
+      //width and height
+      width: 100%;
+      height: 160px;
+      //background style
+      background-color: $White;
+      border-radius: 10px;
+      //padding and margin
+      padding: 25px;
+      margin: 0 0 10px;
+      //flex
+      display: flex;
+      gap: 20px;
+  
+      .left {
+        //width and height
+        width: 45px;
+        height: 80%;
+        //background style
+        background-color: $Very_light_gray;
+        border-radius: 8px;
+        //inner part
+        padding: 10px 0px;
+        //flex
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+  
+        .up_btn, .down_btn {
+          //width and height
+          width: 20px;
+          height: 20px;
+          //background style
+          background-color: $Very_light_gray;
+          border: none;
+          //flex
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .up_btn:hover,
+        .up_btn:active, 
+        .down_btn:hover,
+        .down_btn:active {
+          cursor: pointer;
+  
+          img {
+            background-color: $Moderate_blue;
+          }
+        }
+  
+        .result {
+          color: $Moderate_blue;
+          font-weight: 500;
+        }
+      }
+  
+      .right {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+  
+        .top {
+          //flex
+          display: flex;
+          justify-content: space-between;
+  
+          .top_left {
+            //flex
+            display: flex;
+            align-items: center;
+  
+            img {
+              width: 30px;            
+            }
+  
+            .first_name {
+              color: $Dark_blue;
+              font-weight: 500;
+              //margin
+              margin: 0 0 0 10px;
+            }
+  
+            .first_date {
+              color: $Grayish_Blue;
+              //margin
+              margin: 0 0 0 15px;
+            }
+          }
+  
+          .top_right {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+            button {
+              //inner part
+              padding: 0;
+              border: none;
+              background-color: inherit;
+  
+              //flex
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              gap: 5px;
+              
+              span {
+                color: $Moderate_blue;
+                font-weight: 900;
+                letter-spacing: 1px;
+              }
+            }
+  
+            button:hover,
+            button:active {
+              cursor: pointer;
+              opacity: 0.5;
+            }
+          }
+        }
+  
+        .bottom {
+          .text {
+            margin: 0;
+            line-height: 1.5;
+            color: $Grayish_Blue;
+          }
+        }
+      }
+    }
+  
+    .reply-comment {
+      max-width: 655px;
+      align-self: flex-end;
+    }
+  
+    .type_comment {
+      //width and height
+      width: 100%;
+      max-width: 720px;
+      height: 160px;
+      //background style
+      background-color: $White;
+      border-radius: 10px;
+      //inner part
+      padding: 25px;
+      //flex
+      display: flex;
+      gap: 20px;
+  
+      img {
+        width: 30px;
+        height: 30px;
+      }
+  
+      textarea {
+        height: 100%;
+        width: 100%;
+        border: 2px solid $Light_gray;
+        font-family: "Rubik", sans-serif;
+        font-size: 16px;
+        border-radius: 10px;
+        padding: 15px 20px;
+        resize: none;
+      }
+  
+      button {
+        //width and height
+        width: 140px;
+        height: 50px;
+        //background style
+        border-radius: 10px;
+        border: none;
+        background-color: $Moderate_blue;
+        color: $White;
+        font-weight: 900;
+      }
+  
+      button:hover,
+      button:active {
+        cursor: pointer;
+        background-color: $Light_grayish_blue;
+      }
+    }
+  }
+}

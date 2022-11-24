@@ -1,0 +1,15 @@
+{
+  "name": "omedia-homework",
+  "version": "1.0.0",
+  "description": "Interactive comment section with Html, CSS and JavaScript",
+  "scripts": {
+    "sass-watch": "sass --no-source-map --watch src/sass/style.scss src/style.css"
+  },
+  "keywords": [],
+  "author": "Demetre Panjakidze",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.56.1",
+    "sass-watch": "^0.1.0"
+  }
+}

@@ -1,0 +1,239 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+  background-color: hsl(228deg, 33%, 97%);
+  margin: 0;
+  padding: 60px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body image {
+  display: block;
+}
+body main {
+  width: 70%;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+}
+body main #background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.2;
+  display: none;
+}
+body main #delete_container {
+  width: 400px;
+  height: 250px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: hsl(0deg, 0%, 100%);
+  border: 2px solid lime;
+  border-radius: 10px;
+  padding: 30px;
+}
+body main #delete_container h2 {
+  margin: 0;
+  font-size: 19px;
+  color: hsl(212deg, 24%, 26%);
+}
+body main #delete_container p {
+  margin: 0;
+  color: hsl(211deg, 10%, 45%);
+  line-height: 1.5;
+}
+body main #delete_container .choice {
+  display: flex;
+  justify-content: space-between;
+}
+body main #delete_container .choice #cancel_btn {
+  width: 150px;
+  height: 50px;
+  background-color: hsl(211deg, 10%, 45%);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body main #delete_container .choice #cancel_btn .cancel_span {
+  text-transform: capitalize;
+  color: hsl(0deg, 0%, 100%);
+  font-weight: 900;
+}
+body main #delete_container .choice #do_delete_btn {
+  width: 150px;
+  height: 50px;
+  background-color: hsl(358deg, 79%, 66%);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body main #delete_container .choice #do_delete_btn .cancel_cancel_span {
+  text-transform: capitalize;
+  color: hsl(0deg, 0%, 100%);
+  font-weight: 500;
+}
+body main .comment {
+  width: 100%;
+  height: 160px;
+  background-color: hsl(0deg, 0%, 100%);
+  border-radius: 10px;
+  padding: 25px;
+  margin: 0 0 10px;
+  display: flex;
+  gap: 20px;
+}
+body main .comment .left {
+  width: 45px;
+  height: 80%;
+  background-color: hsl(228deg, 33%, 97%);
+  border-radius: 8px;
+  padding: 10px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+body main .comment .left .up_btn, body main .comment .left .down_btn {
+  width: 20px;
+  height: 20px;
+  background-color: hsl(228deg, 33%, 97%);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body main .comment .left .up_btn:hover,
+body main .comment .left .up_btn:active,
+body main .comment .left .down_btn:hover,
+body main .comment .left .down_btn:active {
+  cursor: pointer;
+}
+body main .comment .left .up_btn:hover img,
+body main .comment .left .up_btn:active img,
+body main .comment .left .down_btn:hover img,
+body main .comment .left .down_btn:active img {
+  background-color: hsl(238deg, 40%, 52%);
+}
+body main .comment .left .result {
+  color: hsl(238deg, 40%, 52%);
+  font-weight: 500;
+}
+body main .comment .right {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+body main .comment .right .top {
+  display: flex;
+  justify-content: space-between;
+}
+body main .comment .right .top .top_left {
+  display: flex;
+  align-items: center;
+}
+body main .comment .right .top .top_left img {
+  width: 30px;
+}
+body main .comment .right .top .top_left .first_name {
+  color: hsl(212deg, 24%, 26%);
+  font-weight: 500;
+  margin: 0 0 0 10px;
+}
+body main .comment .right .top .top_left .first_date {
+  color: hsl(211deg, 10%, 45%);
+  margin: 0 0 0 15px;
+}
+body main .comment .right .top .top_right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body main .comment .right .top .top_right button {
+  padding: 0;
+  border: none;
+  background-color: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+}
+body main .comment .right .top .top_right button span {
+  color: hsl(238deg, 40%, 52%);
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+body main .comment .right .top .top_right button:hover,
+body main .comment .right .top .top_right button:active {
+  cursor: pointer;
+  opacity: 0.5;
+}
+body main .comment .right .bottom .text {
+  margin: 0;
+  line-height: 1.5;
+  color: hsl(211deg, 10%, 45%);
+}
+body main .reply-comment {
+  max-width: 655px;
+  align-self: flex-end;
+}
+body main .type_comment {
+  width: 100%;
+  max-width: 720px;
+  height: 160px;
+  background-color: hsl(0deg, 0%, 100%);
+  border-radius: 10px;
+  padding: 25px;
+  display: flex;
+  gap: 20px;
+}
+body main .type_comment img {
+  width: 30px;
+  height: 30px;
+}
+body main .type_comment textarea {
+  height: 100%;
+  width: 100%;
+  border: 2px solid hsl(223deg, 20%, 93%);
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+  border-radius: 10px;
+  padding: 15px 20px;
+  resize: none;
+}
+body main .type_comment button {
+  width: 140px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  background-color: hsl(238deg, 40%, 52%);
+  color: hsl(0deg, 0%, 100%);
+  font-weight: 900;
+}
+body main .type_comment button:hover,
+body main .type_comment button:active {
+  cursor: pointer;
+  background-color: hsl(239deg, 58%, 85%);
+}
